@@ -8,13 +8,14 @@ function Hero() {
 				<h1>Little Lemon</h1>
 				<h3>Chicago</h3>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-					labore et dolore magna aliqua.
+					We are a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
 				</p>
 
-				<a href="" >Reserve a table</a>
+				<a href="" className='button'>Reserve a table</a>
 			</div>
-			<img src={dish} alt="Image of restaurant dish" />
+			<div className='hero-image'>
+				<img src={dish} alt="Image of restaurant dish" />
+			</div>
 		</article>
 	)
 }
