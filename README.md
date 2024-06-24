@@ -6,7 +6,7 @@ Made by Avik Roy
 
 First clone the git repository. To do this, run this command in the folder you want to clone in:
 
-### `git clone`
+### `git clone [url]`
 
 Everything should be cloned and ready to run.
 
