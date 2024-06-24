@@ -1,4 +1,4 @@
-import React, {useReducer} from 'react';
+import React, {useReducer, useEffect} from 'react';
 import {Routes, Route, useNavigate} from 'react-router-dom';
 import BookingPage from './BookingPage';
 import HomePage from './HomePage';
@@ -6,6 +6,21 @@ import ConfirmedBooking from './ConfirmedBooking';
 import { fetchAPI, submitAPI } from '../bookingsAPI';
 
 function Main() {
+	useEffect(() => {
+		const script = document.createElement('script');
+
+		script.src = 'https://raw.githubusercontent.com/courseraap/capstone/main/api.js';
+		script.async = true;
+
+		document.body.appendChild(script);
+
+		// window.fetchAPI();
+
+		return () => {
+			document.body.removeChild(script);
+		}
+	}, []);
+
 	const initializeTimes = () => {
 		return fetchAPI(new Date());
 	};

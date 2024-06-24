@@ -409,6 +409,11 @@ form .button {
 	margin-top: 2rem;
 }
 
+form .button:disabled {
+	background-color: #5f5757;
+	color: var(--gray);
+}
+
 form .input-group {
 	display: flex;
 	flex-direction: row;
@@ -432,6 +437,12 @@ form label {
 	font-weight: 500;
 	font-size: 18pt;
 	margin: 0.5rem;
+}
+
+form .error {
+	color: #e72727;
+	font-family: 'Karla', sans-serif;
+	font-weight: 500;
 }
 
 /* ----------------------------------- CONFIRMATION PAGE ------------------------------- */

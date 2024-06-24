@@ -1,7 +1,7 @@
 import React , { useState } from 'react';
 
 function BookingForm ({availableTimes, dispatch, submitForm}) {
-	const [date, setDate] = useState("");
+	const [date, setDate] = useState(new Date().toISOString().substring(0,10));
 	const [time, setTime] = useState("");
 	const [numberOfGuests, setNumberOfGuests] = useState(1);
 	const [occassion, setOccassion] = useState("");
@@ -19,16 +19,17 @@ function BookingForm ({availableTimes, dispatch, submitForm}) {
 	return (
 		<form onSubmit={handleSubmit}>
 			<div className='input-group'>
-				<label htmlFor="res-date">Choose date</label>
-				<input type="date" data-testid="res-date" id="res-date" className='field' value={date} onChange={(e) => {
+				<label htmlFor="res-date">Choose date*</label>
+				<input type="date" data-testid="res-date" min={new Date().toISOString().substring(0,10)} id="res-date" className='field' value={date} onChange={(e) => {
 					setDate(e.target.value);
 					dispatch({date: e.target.value});
-				}} />
+				}}/>
 			</div>
 
 			<div className='input-group'>
-				<label htmlFor="res-time">Choose time</label>
+				<label htmlFor="res-time">Choose time*</label>
 				<select id="res-time" className='field' value={time} onChange={(e) => setTime(e.target.value)}>
+					<option disabled>Select a time</option>
 					{availableTimes.map(
 						(item) => <option key={item}>{item}</option>
 					)}
@@ -36,7 +37,7 @@ function BookingForm ({availableTimes, dispatch, submitForm}) {
 			</div>
 
 			<div className='input-group'>
-				<label htmlFor="guests">Number of guests</label>
+				<label htmlFor="guests">Number of guests*</label>
 				<input
 					type="number"
 					placeholder="1"
@@ -49,14 +50,15 @@ function BookingForm ({availableTimes, dispatch, submitForm}) {
 			</div>
 
 			<div className='input-group'>
-				<label htmlFor="occasion">Occasion</label>
+				<label htmlFor="occasion">Occasion*</label>
 				<select id="occasion" className='field' value={occassion} onChange={(e) => setOccassion(e.target.value)}>
+					<option disabled>Select an occassion</option>
 					<option>Birthday</option>
 					<option>Anniversary</option>
 				</select>
 			</div>
 
-			<input className='button' type="submit" value="Make Your Reservation" />
+			<input className='button' aria-label='On Click' type="submit" value="Make Your Reservation" />
 		</form>
 	);
 }

@@ -5,6 +5,8 @@ import { MemoryRouter, BrowserRouter } from 'react-router-dom';
 
 // jest.mock('./components/BookingForm');
 
+// TODO: Make tests works
+
 
 describe('Booking Form', () => {
 	test('Initialize times function works', () => {
