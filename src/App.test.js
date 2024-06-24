@@ -1,8 +1,44 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen, fireEvent } from '@testing-library/react';
+import BookingForm from './components/BookingForm';
+import Main from './components/Main';
+import { MemoryRouter, BrowserRouter } from 'react-router-dom';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+// jest.mock('./components/BookingForm');
+
+
+describe('Booking Form', () => {
+	test('Initialize times function works', () => {
+		const expected = [
+			'17:00',
+			'18:00',
+			'19:00',
+			'20:00',
+			'21:00',
+			'22:00'
+		];
+
+		const dispatch = jest.fn()
+
+		render(<BookingForm />);
+
+		// expect(initializeTimes()).toStrictEqual(expected)
+
+	});
+
+	test('Update times function works', () => {
+		const expected = [
+			'17:00',
+			'18:00',
+			'19:00',
+			'20:00',
+			'21:00',
+			'22:00'
+		];
+
+		const newState = updateTimes(expected, new Date());
+
+		// expect(newState).toStrictEqual(expected);
+
+
+	});
+})

@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './Card';
+import {Link} from 'react-router-dom';
 import greekSalad from '../assets/greek salad.jpg';
 import bruchetta from '../assets/bruchetta.svg';
 import lemonDessert from '../assets/lemon dessert.jpg'
@@ -16,7 +17,7 @@ function Specials() {
 			<article>
 				<div className='heading'>
 					<h3>This weeks specials!</h3>
-					<a className='button' href="">Online Menu</a>
+					<Link to="/" className='button'>Online Menu</Link>
 				</div>
 				<div className='card-group'>
 					<Card title="Greek Salad" price="$12.99" description={cardDescriptions.greekSalad} image={greekSalad}/>

@@ -29,6 +29,10 @@ article {
 	padding: 3rem;
 }
 
+a {
+	text-decoration: none;
+}
+
 .button {
 	background-color: var(--yellow);
 	color: #000000;
@@ -397,4 +401,48 @@ form {
 	display: flex;
 	flex-direction: column;
 	padding: 3rem;
+	align-items: center;
+}
+
+form .button {
+	border: 0px;
+	margin-top: 2rem;
+}
+
+form .input-group {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+form .field {
+	background-color: var(--gray);
+	border-radius: 8px;
+	font-family: 'Karla', sans-serif;
+	font-weight: 400;
+	font-size: 14pt;
+	max-width: fit-content;
+	margin: 1rem;
+	padding: 0.5rem;
+}
+
+form label {
+	font-family: 'Karla', sans-serif;
+	font-weight: 500;
+	font-size: 18pt;
+	margin: 0.5rem;
+}
+
+/* ----------------------------------- CONFIRMATION PAGE ------------------------------- */
+
+.confirmation {
+	display: flex;
+	flex-direction: column;
+	flex: auto;
+	align-items: center;
+}
+
+.confirmation h1 {
+	color: var(--green);
 }
